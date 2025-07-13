@@ -1,0 +1,666 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "!Solution Items", "!Solution Items", "{6BDC3685-D64C-4B48-B670-DCE849EB0001}"
+	ProjectSection(SolutionItems) = preProject
+		..\CODEOWNERS = ..\CODEOWNERS
+		..\DESIGN.md = ..\DESIGN.md
+		Directory.Build.props = Directory.Build.props
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{479A2613-B26C-46B2-BAB4-133402E3255B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rpc", "Rpc", "{B71ECF54-2A57-4733-A258-1D1D212456D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpc.Server", "Examples\Rpc\Rpc.Server\Rpc.Server.csproj", "{B1A0B873-2254-4F4C-BF18-ED4D5811F533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpc.Client", "Examples\Rpc\Rpc.Client\Rpc.Client.csproj", "{3C112D3D-A878-4D53-B38E-67D18F7CF122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpc.Contracts", "Examples\Rpc\Rpc.Contracts\Rpc.Contracts.csproj", "{AB6EDDE0-6D26-4A28-B50C-3D95D08589D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rpc.Security", "Rpc.Security", "{4B346CE4-D2F1-4D3D-B964-B893745721D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Observer", "Observer", "{F410156E-BBB6-4F4F-81ED-3021740B6803}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpc.Security.Contracts", "Examples\Rpc.Security\Rpc.Security.Contracts\Rpc.Security.Contracts.csproj", "{EBAC39D0-B526-47E8-B5CE-D8D6B023EEDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpc.Security.Server", "Examples\Rpc.Security\Rpc.Security.Server\Rpc.Security.Server.csproj", "{A600A178-4D63-46C6-AF8D-D0EF5652468B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpc.Security.Client", "Examples\Rpc.Security\Rpc.Security.Client\Rpc.Security.Client.csproj", "{D6868AEA-B222-42FD-B527-826DCD920B87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpc.Security.ExampleProvider", "Examples\Rpc.Security\Rpc.Security.ExampleProvider\Rpc.Security.ExampleProvider.csproj", "{09B80D8C-927D-4033-A377-91F148D931AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer.Contracts", "Examples\Observer\Observer.Contracts\Observer.Contracts.csproj", "{67B4D111-43EC-4E5A-961F-CBD331259768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer.Publisher", "Examples\Observer\Observer.Publisher\Observer.Publisher.csproj", "{1237C0BC-D237-4B5A-B4FE-282E88D2B694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer.Subscriber", "Examples\Observer\Observer.Subscriber\Observer.Subscriber.csproj", "{DC132D36-3785-4EC4-B1D9-0D1C4D2E7AAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		Examples\Docker\!readme.txt = Examples\Docker\!readme.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Contracts", "Examples\Docker\Docker.Contracts\Docker.Contracts.csproj", "{D5034369-E3FD-52F5-B801-D3ABF129F860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Server", "Examples\Docker\Docker.Server\Docker.Server.csproj", "{6D78262A-BD1F-A129-1A2D-91EA3EF7E150}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Client", "Examples\Docker\Docker.Client\Docker.Client.csproj", "{1FF630CD-1550-5B58-172A-C7145D5F8409}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows-hidden", "Workflows-hidden", "{71FB01DE-4B4E-4B92-8D5A-4A45241DF379}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows-hidden\build-and-test.yml = ..\.github\workflows-hidden\build-and-test.yml
+		..\.github\workflows-hidden\pre-release.yml = ..\.github\workflows-hidden\pre-release.yml
+		..\.github\workflows-hidden\release.yml = ..\.github\workflows-hidden\release.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra", "Scabra\Scabra.csproj", "{DF654F1D-78B1-FF03-F686-C51E589CDBF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Rpc.Client.ProxyGenerator", "Scabra.Rpc.Client.ProxyGenerator\Scabra.Rpc.Client.ProxyGenerator.csproj", "{278BC4D5-B3B6-D60B-B735-903BD4B8A5D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Rpc.Client.ProxyGenerator.Tests", "Scabra.Rpc.Client.ProxyGenerator.Tests\Scabra.Rpc.Client.ProxyGenerator.Tests.csproj", "{DF736DCE-C3F2-771E-8AF6-5074E7C8AB7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Rpc.Client.ProxyGenerator.TestsContracts", "Scabra.Rpc.Client.ProxyGenerator.TestsContracts\Scabra.Rpc.Client.ProxyGenerator.TestsContracts.csproj", "{99B402DA-F367-57B9-A51A-3DC4BEF5E1E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Rpc", "Scabra.Rpc\Scabra.Rpc.csproj", "{1264A138-F2D8-F2CE-C1AA-55F0AB20E111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Observer", "Scabra.Observer\Scabra.Observer.csproj", "{72B582A7-C423-3A30-948D-70E28925CA25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Observer.Tests", "Scabra.Observer.Tests\Scabra.Observer.Tests.csproj", "{5D7E4856-8407-AE33-DEB8-510059435CED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Rpc.Tests", "Scabra.Rpc.Tests\Scabra.Rpc.Tests.csproj", "{5E8690AD-EC34-704E-5013-A8FFDB6C308B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Observer.Publisher", "Scabra.Observer.Publisher\Scabra.Observer.Publisher.csproj", "{63716D32-23D2-2A7A-EF1D-50D726B2E393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Observer.Subscriber", "Scabra.Observer.Subscriber\Scabra.Observer.Subscriber.csproj", "{2F1513C8-6161-746F-D08A-6869D42DC648}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Observer.Publisher.Hosting", "Scabra.Observer.Publisher.Hosting\Scabra.Observer.Publisher.Hosting.csproj", "{07E8CA88-FC18-3FB0-F80E-DD73BC82967B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Observer.Subscriber.Hosting", "Scabra.Observer.Subscriber.Hosting\Scabra.Observer.Subscriber.Hosting.csproj", "{1C2AE65D-3247-CEBA-2B88-F6F7A3B44988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Rpc.Client", "Scabra.Rpc.Client\Scabra.Rpc.Client.csproj", "{EF154AB6-E926-BCC1-8DF0-296FE139D523}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Rpc.Server", "Scabra.Rpc.Server\Scabra.Rpc.Server.csproj", "{8B1574F0-0F09-54A6-2A7D-C6CDD5FA793A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Rpc.Client.Hosting", "Scabra.Rpc.Client.Hosting\Scabra.Rpc.Client.Hosting.csproj", "{87C163E8-758C-AE40-1DA4-8262CEB791AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scabra.Rpc.Server.Hosting", "Scabra.Rpc.Server.Hosting\Scabra.Rpc.Server.Hosting.csproj", "{5A751340-17A4-4596-3291-7FC467D2992D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benchmarking", "Benchmarking", "{FB940BCE-0FA4-420F-B1B7-3C7DF4F7A849}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rpc", "Rpc", "{CE0D6A0E-1E39-4E5F-8C3B-E1C20434F274}"
+	ProjectSection(SolutionItems) = preProject
+		Benchmarking\Rpc\run-benchmark.cmd = Benchmarking\Rpc\run-benchmark.cmd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking.Rpc.Contracts", "Benchmarking\Rpc\Contracts\Benchmarking.Rpc.Contracts.csproj", "{7358F7BD-5A86-BCC9-3E00-9231FD4FDEEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking.Rpc.Server", "Benchmarking\Rpc\Server\Benchmarking.Rpc.Server.csproj", "{4F584567-D914-8371-E019-7F4B7F9E2D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking.Rpc.Client", "Benchmarking\Rpc\Client\Benchmarking.Rpc.Client.csproj", "{E6B3CEAE-39F1-5ACA-8CED-C9535F7D8016}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Observer", "Observer", "{3C53C98B-86A2-415F-BFC9-BD1AF273E30A}"
+	ProjectSection(SolutionItems) = preProject
+		Benchmarking\Observer\run-benchmark.cmd = Benchmarking\Observer\run-benchmark.cmd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking.Observer.Contracts", "Benchmarking\Observer\Contracts\Benchmarking.Observer.Contracts.csproj", "{7D146745-1032-CED7-38AD-2F41B01165D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking.Observer.Repeater", "Benchmarking\Observer\Repeater\Benchmarking.Observer.Repeater.csproj", "{5BC17DD0-B6D5-B2C2-2813-E38E35A8912E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking.Observer.Terminator", "Benchmarking\Observer\Terminator\Benchmarking.Observer.Terminator.csproj", "{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1A0B873-2254-4F4C-BF18-ED4D5811F533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A0B873-2254-4F4C-BF18-ED4D5811F533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A0B873-2254-4F4C-BF18-ED4D5811F533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A0B873-2254-4F4C-BF18-ED4D5811F533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C112D3D-A878-4D53-B38E-67D18F7CF122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C112D3D-A878-4D53-B38E-67D18F7CF122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C112D3D-A878-4D53-B38E-67D18F7CF122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C112D3D-A878-4D53-B38E-67D18F7CF122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB6EDDE0-6D26-4A28-B50C-3D95D08589D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6EDDE0-6D26-4A28-B50C-3D95D08589D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6EDDE0-6D26-4A28-B50C-3D95D08589D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6EDDE0-6D26-4A28-B50C-3D95D08589D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBAC39D0-B526-47E8-B5CE-D8D6B023EEDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAC39D0-B526-47E8-B5CE-D8D6B023EEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAC39D0-B526-47E8-B5CE-D8D6B023EEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAC39D0-B526-47E8-B5CE-D8D6B023EEDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A600A178-4D63-46C6-AF8D-D0EF5652468B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A600A178-4D63-46C6-AF8D-D0EF5652468B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A600A178-4D63-46C6-AF8D-D0EF5652468B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A600A178-4D63-46C6-AF8D-D0EF5652468B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6868AEA-B222-42FD-B527-826DCD920B87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6868AEA-B222-42FD-B527-826DCD920B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6868AEA-B222-42FD-B527-826DCD920B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6868AEA-B222-42FD-B527-826DCD920B87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09B80D8C-927D-4033-A377-91F148D931AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B80D8C-927D-4033-A377-91F148D931AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B80D8C-927D-4033-A377-91F148D931AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B80D8C-927D-4033-A377-91F148D931AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B4D111-43EC-4E5A-961F-CBD331259768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B4D111-43EC-4E5A-961F-CBD331259768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B4D111-43EC-4E5A-961F-CBD331259768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B4D111-43EC-4E5A-961F-CBD331259768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1237C0BC-D237-4B5A-B4FE-282E88D2B694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1237C0BC-D237-4B5A-B4FE-282E88D2B694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1237C0BC-D237-4B5A-B4FE-282E88D2B694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1237C0BC-D237-4B5A-B4FE-282E88D2B694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC132D36-3785-4EC4-B1D9-0D1C4D2E7AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC132D36-3785-4EC4-B1D9-0D1C4D2E7AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC132D36-3785-4EC4-B1D9-0D1C4D2E7AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC132D36-3785-4EC4-B1D9-0D1C4D2E7AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5034369-E3FD-52F5-B801-D3ABF129F860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5034369-E3FD-52F5-B801-D3ABF129F860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5034369-E3FD-52F5-B801-D3ABF129F860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5034369-E3FD-52F5-B801-D3ABF129F860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D78262A-BD1F-A129-1A2D-91EA3EF7E150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D78262A-BD1F-A129-1A2D-91EA3EF7E150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D78262A-BD1F-A129-1A2D-91EA3EF7E150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D78262A-BD1F-A129-1A2D-91EA3EF7E150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF630CD-1550-5B58-172A-C7145D5F8409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF630CD-1550-5B58-172A-C7145D5F8409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF630CD-1550-5B58-172A-C7145D5F8409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF630CD-1550-5B58-172A-C7145D5F8409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF654F1D-78B1-FF03-F686-C51E589CDBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF654F1D-78B1-FF03-F686-C51E589CDBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF654F1D-78B1-FF03-F686-C51E589CDBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF654F1D-78B1-FF03-F686-C51E589CDBF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{278BC4D5-B3B6-D60B-B735-903BD4B8A5D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{278BC4D5-B3B6-D60B-B735-903BD4B8A5D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{278BC4D5-B3B6-D60B-B735-903BD4B8A5D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{278BC4D5-B3B6-D60B-B735-903BD4B8A5D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF736DCE-C3F2-771E-8AF6-5074E7C8AB7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF736DCE-C3F2-771E-8AF6-5074E7C8AB7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF736DCE-C3F2-771E-8AF6-5074E7C8AB7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF736DCE-C3F2-771E-8AF6-5074E7C8AB7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99B402DA-F367-57B9-A51A-3DC4BEF5E1E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99B402DA-F367-57B9-A51A-3DC4BEF5E1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99B402DA-F367-57B9-A51A-3DC4BEF5E1E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99B402DA-F367-57B9-A51A-3DC4BEF5E1E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1264A138-F2D8-F2CE-C1AA-55F0AB20E111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1264A138-F2D8-F2CE-C1AA-55F0AB20E111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1264A138-F2D8-F2CE-C1AA-55F0AB20E111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1264A138-F2D8-F2CE-C1AA-55F0AB20E111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B582A7-C423-3A30-948D-70E28925CA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B582A7-C423-3A30-948D-70E28925CA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B582A7-C423-3A30-948D-70E28925CA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B582A7-C423-3A30-948D-70E28925CA25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D7E4856-8407-AE33-DEB8-510059435CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D7E4856-8407-AE33-DEB8-510059435CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D7E4856-8407-AE33-DEB8-510059435CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D7E4856-8407-AE33-DEB8-510059435CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E8690AD-EC34-704E-5013-A8FFDB6C308B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E8690AD-EC34-704E-5013-A8FFDB6C308B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E8690AD-EC34-704E-5013-A8FFDB6C308B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E8690AD-EC34-704E-5013-A8FFDB6C308B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63716D32-23D2-2A7A-EF1D-50D726B2E393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63716D32-23D2-2A7A-EF1D-50D726B2E393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63716D32-23D2-2A7A-EF1D-50D726B2E393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63716D32-23D2-2A7A-EF1D-50D726B2E393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1513C8-6161-746F-D08A-6869D42DC648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1513C8-6161-746F-D08A-6869D42DC648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1513C8-6161-746F-D08A-6869D42DC648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1513C8-6161-746F-D08A-6869D42DC648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07E8CA88-FC18-3FB0-F80E-DD73BC82967B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E8CA88-FC18-3FB0-F80E-DD73BC82967B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E8CA88-FC18-3FB0-F80E-DD73BC82967B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E8CA88-FC18-3FB0-F80E-DD73BC82967B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2AE65D-3247-CEBA-2B88-F6F7A3B44988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2AE65D-3247-CEBA-2B88-F6F7A3B44988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2AE65D-3247-CEBA-2B88-F6F7A3B44988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2AE65D-3247-CEBA-2B88-F6F7A3B44988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF154AB6-E926-BCC1-8DF0-296FE139D523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF154AB6-E926-BCC1-8DF0-296FE139D523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF154AB6-E926-BCC1-8DF0-296FE139D523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF154AB6-E926-BCC1-8DF0-296FE139D523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1574F0-0F09-54A6-2A7D-C6CDD5FA793A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1574F0-0F09-54A6-2A7D-C6CDD5FA793A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1574F0-0F09-54A6-2A7D-C6CDD5FA793A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1574F0-0F09-54A6-2A7D-C6CDD5FA793A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87C163E8-758C-AE40-1DA4-8262CEB791AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87C163E8-758C-AE40-1DA4-8262CEB791AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87C163E8-758C-AE40-1DA4-8262CEB791AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87C163E8-758C-AE40-1DA4-8262CEB791AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A751340-17A4-4596-3291-7FC467D2992D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A751340-17A4-4596-3291-7FC467D2992D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A751340-17A4-4596-3291-7FC467D2992D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A751340-17A4-4596-3291-7FC467D2992D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7358F7BD-5A86-BCC9-3E00-9231FD4FDEEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7358F7BD-5A86-BCC9-3E00-9231FD4FDEEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7358F7BD-5A86-BCC9-3E00-9231FD4FDEEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7358F7BD-5A86-BCC9-3E00-9231FD4FDEEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F584567-D914-8371-E019-7F4B7F9E2D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F584567-D914-8371-E019-7F4B7F9E2D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F584567-D914-8371-E019-7F4B7F9E2D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F584567-D914-8371-E019-7F4B7F9E2D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6B3CEAE-39F1-5ACA-8CED-C9535F7D8016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B3CEAE-39F1-5ACA-8CED-C9535F7D8016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B3CEAE-39F1-5ACA-8CED-C9535F7D8016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6B3CEAE-39F1-5ACA-8CED-C9535F7D8016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D146745-1032-CED7-38AD-2F41B01165D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D146745-1032-CED7-38AD-2F41B01165D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D146745-1032-CED7-38AD-2F41B01165D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D146745-1032-CED7-38AD-2F41B01165D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC17DD0-B6D5-B2C2-2813-E38E35A8912E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC17DD0-B6D5-B2C2-2813-E38E35A8912E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC17DD0-B6D5-B2C2-2813-E38E35A8912E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC17DD0-B6D5-B2C2-2813-E38E35A8912E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B71ECF54-2A57-4733-A258-1D1D212456D2} = {479A2613-B26C-46B2-BAB4-133402E3255B}
+		{B1A0B873-2254-4F4C-BF18-ED4D5811F533} = {B71ECF54-2A57-4733-A258-1D1D212456D2}
+		{3C112D3D-A878-4D53-B38E-67D18F7CF122} = {B71ECF54-2A57-4733-A258-1D1D212456D2}
+		{AB6EDDE0-6D26-4A28-B50C-3D95D08589D4} = {B71ECF54-2A57-4733-A258-1D1D212456D2}
+		{4B346CE4-D2F1-4D3D-B964-B893745721D7} = {479A2613-B26C-46B2-BAB4-133402E3255B}
+		{F410156E-BBB6-4F4F-81ED-3021740B6803} = {479A2613-B26C-46B2-BAB4-133402E3255B}
+		{EBAC39D0-B526-47E8-B5CE-D8D6B023EEDC} = {4B346CE4-D2F1-4D3D-B964-B893745721D7}
+		{A600A178-4D63-46C6-AF8D-D0EF5652468B} = {4B346CE4-D2F1-4D3D-B964-B893745721D7}
+		{D6868AEA-B222-42FD-B527-826DCD920B87} = {4B346CE4-D2F1-4D3D-B964-B893745721D7}
+		{09B80D8C-927D-4033-A377-91F148D931AD} = {4B346CE4-D2F1-4D3D-B964-B893745721D7}
+		{67B4D111-43EC-4E5A-961F-CBD331259768} = {F410156E-BBB6-4F4F-81ED-3021740B6803}
+		{1237C0BC-D237-4B5A-B4FE-282E88D2B694} = {F410156E-BBB6-4F4F-81ED-3021740B6803}
+		{DC132D36-3785-4EC4-B1D9-0D1C4D2E7AAA} = {F410156E-BBB6-4F4F-81ED-3021740B6803}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {479A2613-B26C-46B2-BAB4-133402E3255B}
+		{D5034369-E3FD-52F5-B801-D3ABF129F860} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{6D78262A-BD1F-A129-1A2D-91EA3EF7E150} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1FF630CD-1550-5B58-172A-C7145D5F8409} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{71FB01DE-4B4E-4B92-8D5A-4A45241DF379} = {6BDC3685-D64C-4B48-B670-DCE849EB0001}
+		{CE0D6A0E-1E39-4E5F-8C3B-E1C20434F274} = {FB940BCE-0FA4-420F-B1B7-3C7DF4F7A849}
+		{7358F7BD-5A86-BCC9-3E00-9231FD4FDEEB} = {CE0D6A0E-1E39-4E5F-8C3B-E1C20434F274}
+		{4F584567-D914-8371-E019-7F4B7F9E2D4C} = {CE0D6A0E-1E39-4E5F-8C3B-E1C20434F274}
+		{E6B3CEAE-39F1-5ACA-8CED-C9535F7D8016} = {CE0D6A0E-1E39-4E5F-8C3B-E1C20434F274}
+		{3C53C98B-86A2-415F-BFC9-BD1AF273E30A} = {FB940BCE-0FA4-420F-B1B7-3C7DF4F7A849}
+		{7D146745-1032-CED7-38AD-2F41B01165D1} = {3C53C98B-86A2-415F-BFC9-BD1AF273E30A}
+		{5BC17DD0-B6D5-B2C2-2813-E38E35A8912E} = {3C53C98B-86A2-415F-BFC9-BD1AF273E30A}
+		{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB} = {3C53C98B-86A2-415F-BFC9-BD1AF273E30A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8411221D-C6F3-4AC0-BF5A-A247D7146849}
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(HgVSProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+EndGlobal

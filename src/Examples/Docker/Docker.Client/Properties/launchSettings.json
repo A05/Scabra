@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Docker.Client": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "DockerfileRunArguments": "--name scabra-example-client --network=scabra"
+    }
+  }
+}

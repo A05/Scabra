@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>Scabra.Rpc</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.15.4" />
+		<PackageReference Include="BenchmarkDotNet.TestAdapter" Version="0.15.4">
+		  <TreatAsUsed>true</TreatAsUsed>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.10" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2">
+		  <TreatAsUsed>true</TreatAsUsed>
+		</PackageReference>
+		<PackageReference Include="NUnit" Version="3.13.3" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+		<PackageReference Include="Moq" Version="4.18.4">
+		  <TreatAsUsed>true</TreatAsUsed>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Scabra.Rpc.Client.Hosting\Scabra.Rpc.Client.Hosting.csproj" />
+	  <ProjectReference Include="..\Scabra.Rpc.Client\Scabra.Rpc.Client.csproj" />
+	  <ProjectReference Include="..\Scabra.Rpc.Server.Hosting\Scabra.Rpc.Server.Hosting.csproj" />
+	  <ProjectReference Include="..\Scabra.Rpc.Server\Scabra.Rpc.Server.csproj" />
+	  <ProjectReference Include="..\Scabra.Rpc\Scabra.Rpc.csproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Authors>A05</Authors>
+		<Description>Contains mechanism for organizing interactions between components of distributed systems via TCP in the form of RPC and the brokerless publish-subscribe messaging pattern powered by NetMQ/ZeroMQ.</Description>
+		<PackageTags>Scabra;NetMQ;ZMQ;0MQ;Messaging;transport;distributed</PackageTags>
+		<PackageProjectUrl>https://github.com/a05/scabra</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/a05/scabra/blob/master/LICENSE</PackageLicenseUrl>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/a05/scabra.git</RepositoryUrl>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<Deterministic>true</Deterministic>
+		<DeterministicSourcePaths>true</DeterministicSourcePaths>
+		<IncludeSource>true</IncludeSource>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>	
+	<ItemGroup>
+	  <ProjectReference Include="..\Scabra\Scabra.csproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+<Project>
+	
+	<!-- Framework version -->
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Version>0.1.9.3</Version>
+		<DebugType>Portable</DebugType>
+	</PropertyGroup>
+
+	<!-- Assembly information -->
+	<PropertyGroup>
+		<Product>Scabra</Product>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	</PropertyGroup>
+	
+</Project>

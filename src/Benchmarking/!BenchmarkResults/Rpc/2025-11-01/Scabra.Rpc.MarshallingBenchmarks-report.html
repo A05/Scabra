@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Scabra.Rpc.MarshallingBenchmarks-20251101-141719</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.4, Windows 11 (10.0.26100.6899/24H2/2024Update/HudsonValley)
+Intel Core Ultra 7 155U 1.70GHz, 1 CPU, 14 logical and 12 physical cores
+.NET SDK 9.0.306
+  [Host]     : .NET 6.0.36 (6.0.36, 6.0.3624.51421), X64 RyuJIT x86-64-v3
+  DefaultJob : .NET 6.0.36 (6.0.36, 6.0.3624.51421), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method     </th><th>Mean</th><th>Error</th><th>StdDev</th>
+</tr>
+</thead><tbody><tr><td>FullTrip</td><td>5,238.0 ns</td><td>101.28 ns</td><td>116.64 ns</td>
+</tr><tr><td>MarshalRequest</td><td>1,765.9 ns</td><td>29.08 ns</td><td>25.78 ns</td>
+</tr><tr><td>UnmarshalRequest</td><td>2,282.2 ns</td><td>27.07 ns</td><td>24.00 ns</td>
+</tr><tr><td>MarshalResponse</td><td>861.5 ns</td><td>15.28 ns</td><td>14.29 ns</td>
+</tr><tr><td>UnmarshalResponse</td><td>409.3 ns</td><td>7.20 ns</td><td>6.01 ns</td>
+</tr></tbody></table>
+</body>
+</html>

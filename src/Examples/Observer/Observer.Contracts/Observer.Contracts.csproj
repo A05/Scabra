@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<OutputType>Library</OutputType>
+		<RootNamespace>Scabra.Examples.Events</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="protobuf-net" Version="2.4.6"/>
+	</ItemGroup>
+</Project>

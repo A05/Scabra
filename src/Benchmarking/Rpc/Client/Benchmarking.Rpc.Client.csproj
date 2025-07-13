@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>Scabra.Benchmarking.Rpc</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="appsettings.json" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="appsettings.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.15.4" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.66.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.9" />
+		<PackageReference Include="protobuf-net.Grpc" Version="1.2.2" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Scabra.Rpc.Client.Hosting\Scabra.Rpc.Client.Hosting.csproj" />
+		<ProjectReference Include="..\..\..\Scabra.Rpc.Client.ProxyGenerator\Scabra.Rpc.Client.ProxyGenerator.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+		<ProjectReference Include="..\Contracts\Benchmarking.Rpc.Contracts.csproj" />
+	</ItemGroup>
+</Project>

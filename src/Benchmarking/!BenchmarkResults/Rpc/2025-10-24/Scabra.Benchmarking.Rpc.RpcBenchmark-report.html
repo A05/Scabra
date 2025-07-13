@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Scabra.Benchmarking.Rpc.RpcBenchmark-20251024-144802</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.4, Windows 11 (10.0.26100.6899/24H2/2024Update/HudsonValley)
+Intel Core Ultra 7 155U 1.70GHz, 1 CPU, 14 logical and 12 physical cores
+.NET SDK 9.0.306
+  [Host]     : .NET 6.0.36 (6.0.36, 6.0.3624.51421), X64 RyuJIT x86-64-v3
+  DefaultJob : .NET 6.0.36 (6.0.36, 6.0.3624.51421), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method                              </th><th>Mean </th><th>Error</th><th>StdDev</th><th>Median</th>
+</tr>
+</thead><tbody><tr><td>No_Parameters_No_Return</td><td>65,791.2 &mu;s</td><td>1,313.13 &mu;s</td><td>2,334.08 &mu;s</td><td>66,941.9 &mu;s</td>
+</tr><tr><td>Primitive_Parameters_Primitive_Return</td><td>67,283.5 &mu;s</td><td>1,331.05 &mu;s</td><td>2,658.25 &mu;s</td><td>67,388.3 &mu;s</td>
+</tr><tr><td>Complex_Parameters_Complex_Return</td><td>70,837.1 &mu;s</td><td>1,407.40 &mu;s</td><td>3,504.91 &mu;s</td><td>71,320.5 &mu;s</td>
+</tr><tr><td>No_Parameters_No_Return_gRpc</td><td>188.8 &mu;s</td><td>1.07 &mu;s</td><td>0.95 &mu;s</td><td>188.9 &mu;s</td>
+</tr><tr><td>Primitive_Parameters_Primitive_Return_gRpc</td><td>201.3 &mu;s</td><td>2.27 &mu;s</td><td>2.13 &mu;s</td><td>201.0 &mu;s</td>
+</tr><tr><td>Complex_Parameters_Complex_Return_gRpc</td><td>319.7 &mu;s</td><td>6.10 &mu;s</td><td>5.41 &mu;s</td><td>318.4 &mu;s</td>
+</tr></tbody></table>
+</body>
+</html>

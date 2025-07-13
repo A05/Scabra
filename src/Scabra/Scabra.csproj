@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Authors>A05</Authors>
+		<Description>Contains mechanism for organizing interactions between components of distributed systems via TCP in the form of RPC and the brokerless publish-subscribe messaging pattern powered by NetMQ/ZeroMQ.</Description>
+		<PackageTags>Scabra;NetMQ;ZMQ;0MQ;Messaging;transport;distributed</PackageTags>
+		<PackageProjectUrl>https://github.com/a05/scabra</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/a05/scabra/blob/master/LICENSE</PackageLicenseUrl>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/a05/scabra.git</RepositoryUrl>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<Deterministic>true</Deterministic>
+		<DeterministicSourcePaths>true</DeterministicSourcePaths>
+		<IncludeSource>true</IncludeSource>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>	
+	<ItemGroup>
+		<PackageReference Include="AsyncIO" Version="0.1.69" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.9" />
+		<PackageReference Include="NetMQ" Version="4.0.1.13" />
+		<PackageReference Include="protobuf-net" Version="2.4.6" />
+		<PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+	</ItemGroup>
+</Project>
