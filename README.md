@@ -58,6 +58,7 @@ To report a security issue, please use the GitHub Security Advisory ["Report a V
 * Make RPC adhere to the ```zerorpc``` standard.	
 * Add _XPub/XSub_ pattern support.
 * Add _Push/Pull_ pattern support.
+* Add _timeout and cancellation propagation_ for RPC calls.
 
 ### Reliability
 
@@ -69,6 +70,7 @@ To report a security issue, please use the GitHub Security Advisory ["Report a V
 
 ### Usability
 
+* Consider remove ```Scabra``` prefix from the public types like ```ScabraRpcChannel```, ```ScabraRpcServer```, etc.
 * Ensure all error messages are concise and clear.
 * Create users(developers) documentation.
 * Design configuration management process.
