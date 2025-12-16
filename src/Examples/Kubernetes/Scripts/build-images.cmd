@@ -1,0 +1,2 @@
+docker build -f "..\k8s.Rpc.Server\Dockerfile" --force-rm -t scabra-example-k8s-rpc-server "..\..\.."
+docker build -f "..\k8s.Rpc.Client\Dockerfile" --force-rm -t scabra-example-k8s-rpc-client "..\..\.."

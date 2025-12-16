@@ -14,8 +14,8 @@ using global::System.Buffers;
 using global::System.IO;
 using Scabra.Researches.Codegen.Laguna;
 using Scabra.Rpc.Client;
+using Scabra;
 using Scabra.Rpc;
-using Scabra.Rpc.Client;
 
 namespace Scabra.ProxyGenerator2.Tests
 {

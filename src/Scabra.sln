@@ -114,6 +114,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking.Observer.Repea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking.Observer.Terminator", "Benchmarking\Observer\Terminator\Benchmarking.Observer.Terminator.csproj", "{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes", "Kubernetes", "{BB5B45E2-3600-421E-B2D2-2F1E016E1E7A}"
+	ProjectSection(SolutionItems) = preProject
+		Examples\Kubernetes\!readme.md = Examples\Kubernetes\!readme.md
+		Examples\Kubernetes\k8s-rpc-build-and-run.cmd = Examples\Kubernetes\k8s-rpc-build-and-run.cmd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "k8s.Rpc.Contracts", "Examples\Kubernetes\k8s.Rpc.Contracts\k8s.Rpc.Contracts.csproj", "{D2E736E9-925F-82E4-B1FF-1F744AD54F36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "k8s.Rpc.Server", "Examples\Kubernetes\k8s.Rpc.Server\k8s.Rpc.Server.csproj", "{24AF6040-1DE6-5983-7B90-86E9F660B4EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "k8s.Rpc.Client", "Examples\Kubernetes\k8s.Rpc.Client\k8s.Rpc.Client.csproj", "{3FB42862-B455-75AB-D00F-CBEFB7900D79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -260,6 +272,18 @@ Global
 		{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2E736E9-925F-82E4-B1FF-1F744AD54F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E736E9-925F-82E4-B1FF-1F744AD54F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2E736E9-925F-82E4-B1FF-1F744AD54F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2E736E9-925F-82E4-B1FF-1F744AD54F36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24AF6040-1DE6-5983-7B90-86E9F660B4EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24AF6040-1DE6-5983-7B90-86E9F660B4EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24AF6040-1DE6-5983-7B90-86E9F660B4EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24AF6040-1DE6-5983-7B90-86E9F660B4EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB42862-B455-75AB-D00F-CBEFB7900D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB42862-B455-75AB-D00F-CBEFB7900D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB42862-B455-75AB-D00F-CBEFB7900D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB42862-B455-75AB-D00F-CBEFB7900D79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -291,6 +315,10 @@ Global
 		{7D146745-1032-CED7-38AD-2F41B01165D1} = {3C53C98B-86A2-415F-BFC9-BD1AF273E30A}
 		{5BC17DD0-B6D5-B2C2-2813-E38E35A8912E} = {3C53C98B-86A2-415F-BFC9-BD1AF273E30A}
 		{28EE3DF4-C24A-71D6-DD04-9FD8486D14AB} = {3C53C98B-86A2-415F-BFC9-BD1AF273E30A}
+		{BB5B45E2-3600-421E-B2D2-2F1E016E1E7A} = {479A2613-B26C-46B2-BAB4-133402E3255B}
+		{D2E736E9-925F-82E4-B1FF-1F744AD54F36} = {BB5B45E2-3600-421E-B2D2-2F1E016E1E7A}
+		{24AF6040-1DE6-5983-7B90-86E9F660B4EC} = {BB5B45E2-3600-421E-B2D2-2F1E016E1E7A}
+		{3FB42862-B455-75AB-D00F-CBEFB7900D79} = {BB5B45E2-3600-421E-B2D2-2F1E016E1E7A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8411221D-C6F3-4AC0-BF5A-A247D7146849}

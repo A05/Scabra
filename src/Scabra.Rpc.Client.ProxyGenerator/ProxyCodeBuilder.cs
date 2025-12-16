@@ -52,7 +52,7 @@ namespace Scabra.Rpc.Client
 
         private void BuildUsing(ProxyDescriptor d)
         {
-            bool containsSystem = false, containsScabra = false;
+            bool containsSystem = false, containsScabra = false, containsScabraRpc = false, containsScabraRpcClient = false;
 
             foreach (var @using in d.Usings)
             {
@@ -60,6 +60,10 @@ namespace Scabra.Rpc.Client
                     containsSystem = true;
                 else if (!containsScabra && @using.Equals("Scabra", StringComparison.Ordinal))
                     containsScabra = true;
+                else if (!containsScabraRpc && @using.Equals("Scabra.Rpc", StringComparison.Ordinal))
+                    containsScabraRpc = true;
+                else if (!containsScabraRpcClient && @using.Equals("Scabra.Rpc.Client", StringComparison.Ordinal))
+                    containsScabraRpcClient = true;
 
                 AppendLine($"using {@using};");
             }
@@ -68,10 +72,13 @@ namespace Scabra.Rpc.Client
                 AppendLine("using System;");
 
             if (!containsScabra)
-            {
+                AppendLine("using Scabra;");
+
+            if (!containsScabraRpc)
                 AppendLine("using Scabra.Rpc;");
+
+            if (!containsScabraRpcClient)
                 AppendLine("using Scabra.Rpc.Client;");
-            }
         }
 
         private void BuildMethod(string interfaceName, MethodDescriptor d)

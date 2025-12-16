@@ -59,6 +59,8 @@ To report a security issue, please use the GitHub Security Advisory ["Report a V
 * Add _XPub/XSub_ pattern support.
 * Add _Push/Pull_ pattern support.
 * Add _timeout and cancellation propagation_ for RPC calls.
+* "Fire and forget" based on UDP for RPC calls and Observer pattern.
+* Add TCP configuration ability like ```KeepAlive``` and ```Linger```.
 
 ### Reliability
 

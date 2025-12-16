@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>Scabra.Examples.k8s.Rpc</RootNamespace>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..\..</DockerfileContext>
+		<DockerfileTag>scabra-example-k8s-rpc-server</DockerfileTag>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Content Include="appsettings.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.9" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Scabra.Rpc.Server.Hosting\Scabra.Rpc.Server.Hosting.csproj" />
+		<ProjectReference Include="..\k8s.Rpc.Contracts\k8s.Rpc.Contracts.csproj" />
+	</ItemGroup>
+</Project>
