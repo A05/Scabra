@@ -78,3 +78,31 @@ Scabra will generate the base class for the service inherited from _the contract
     public byte Method2(int[] a, ServerCallContext context) { ... } // abstract
   }
   ```
+
+  # Kubernetes support
+
+  ## RPC zero-downtime on rolling update
+
+  ### If an application is horizontally scalable
+
+  * **Readiness probes** are necessary for hanlding client requests during the pod startup process.
+  * **Liveness probes** are necessary for letting k8s know if an application is alive or not in case of the app's container is still running.
+  * There is always a possibility that some client requests may not be processed because of the race condition between the ```SIGTERM``` signal and removing the pod's entries from the ```iptable``` of nodes during the pod shutdown process. It leads to necessity of having some **retry policy at the client side of RPC**.
+  * The following **strategy of the server shutdown process** is selected to increase possiblity of handling client requests:
+    1. Handle ```SIGTERM``` signal.
+    1. Accept all client requests during the configurable period. *This period gives k8s possibility to clean up ```iptables``` of nodes after which all requests are sent to other nodes.* Let the period default value be 5 seconds.
+    1. Do not accept any new requests and process all current requests.
+    1. Exit the process.
+    
+    *The initial period of accepting request can be eliminated and moved to the container pre-stop hook (sleep in shell script). This option is not selected because it requires the developer to be aware of this.*
+
+  ### If an application is NOT horizontally scalable
+
+  (docs/images/design-k8s-support.svg)
+
+  * All the above.
+  * TODO: Special proxy!
+
+
+
+  ## Observer zero-downtime on rolling update

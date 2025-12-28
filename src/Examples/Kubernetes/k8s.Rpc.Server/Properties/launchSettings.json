@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "k8s.Rpc.Server": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "scabra__rpc__server__address": "tcp://*:3551"
+      }
+    }
+  }
+}

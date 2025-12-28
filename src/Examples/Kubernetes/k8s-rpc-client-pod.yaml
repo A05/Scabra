@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-rpc-client
+spec:
+  containers:
+    - name: rpc-client
+      image: scabra-example-k8s-rpc-client:latest      
+      imagePullPolicy: Never

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-rpc-server
+  labels:
+    pod-name: k8s-rpc-server
+spec:
+  containers:
+    - name: rpc-server
+      image: scabra-example-k8s-rpc-server:latest      
+      imagePullPolicy: Never

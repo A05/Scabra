@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>220</y>
+      <w>200</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Service</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>570</x>
+      <y>300</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+ZDT RPC Proxy</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>570</x>
+      <y>110</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+RPC Client</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
