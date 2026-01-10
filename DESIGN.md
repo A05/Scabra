@@ -79,30 +79,122 @@ Scabra will generate the base class for the service inherited from _the contract
   }
   ```
 
-  # Kubernetes support
+### TODO: Some thoughts from Internet
 
-  ## RPC zero-downtime on rolling update
+* NO default timeout, cancellation (like in gRPC)
+  * https://learn.microsoft.com/en-us/aspnet/core/grpc/deadlines-cancellation?view=aspnetcore-9.0
+* EnableCallContextPropagation (cool feature)
+* Some more info (don't remember why it is saved)
+  * https://learn.microsoft.com/en-us/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-9.0&tabs=visual-studio
+  * https://learn.microsoft.com/en-us/aspnet/core/grpc/deadlines-cancellation?view=aspnetcore-9.0
+  * https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/AsyncUnaryCall.cs
 
-  ### If an application is horizontally scalable
+# Kubernetes support
 
-  * **Readiness probes** are necessary for hanlding client requests during the pod startup process.
-  * **Liveness probes** are necessary for letting k8s know if an application is alive or not in case of the app's container is still running.
-  * There is always a possibility that some client requests may not be processed because of the race condition between the ```SIGTERM``` signal and removing the pod's entries from the ```iptable``` of nodes during the pod shutdown process. It leads to necessity of having some **retry policy at the client side of RPC**.
-  * The following **strategy of the server shutdown process** is selected to increase possiblity of handling client requests:
-    1. Handle ```SIGTERM``` signal.
-    1. Accept all client requests during the configurable period. *This period gives k8s possibility to clean up ```iptables``` of nodes after which all requests are sent to other nodes.* Let the period default value be 5 seconds.
-    1. Do not accept any new requests and process all current requests.
-    1. Exit the process.
+## RPC zero-downtime on rolling update
+
+### If an application is horizontally scalable
+
+* **Readiness probes** are necessary for hanlding client requests during the pod startup process.
+* **Liveness probes** are necessary for letting k8s know if an application is alive or not in case of the app's container is still running.
+* There is always a possibility that some client requests may not be processed because of the race condition between the ```SIGTERM``` signal and removing the pod's entries from the ```iptable``` of nodes during the pod shutdown process. It leads to necessity of having some **retry policy at the client side of RPC**.
+* The following **strategy of the server shutdown process** is selected to increase possiblity of handling client requests:
+  1. Handle ```SIGTERM``` signal.
+  1. Accept all client requests during the configurable period. *This period gives k8s possibility to clean up ```iptables``` of nodes after which all requests are sent to other nodes.* Let the period default value be 5 seconds.
+  1. Do not accept any new requests and process all current requests.
+  1. Exit the process.
     
-    *The initial period of accepting request can be eliminated and moved to the container pre-stop hook (sleep in shell script). This option is not selected because it requires the developer to be aware of this.*
+  The initial period of accepting request can be eliminated and moved to the container pre-stop hook (sleep in shell script). This option is not selected because it requires the developer to be aware of this.
 
-  ### If an application is NOT horizontally scalable
+### If an application is NOT horizontally scalable
 
-  (docs/images/design-k8s-support.svg)
+* Such applications must meet all of the above requirements.
+* For clarify and readability, in this section ```ZDT RPC Proxy``` will be refered as ```Proxy```, ```RPC Client``` as ```Client```, ```RPC Server``` as ```Server```.
 
-  * All the above.
-  * TODO: Special proxy!
+#### ZDT Kubernetes rolling update process
 
+_```Proxy``` effectively transforms a not zero downtimable application into a zero downtimable one._
 
+![](docs/images/design-k8s-support.svg)
 
-  ## Observer zero-downtime on rolling update
+_Preconditions_
+
+* ```Client``` sends calls to ```Proxy``` that redirects them to ```Server v1``` that acceptes and processes the calls. ```RPC Server v1``` is the only pod before the rolling update process.
+* ```Server Deployment``` has ```maxUnavailable = 0``` and ```maxSurge = 1```.
+* No ```pre-stop``` hook is configured for ```Server``` pod.
+* _Termination Grace Period_ of ```Server``` application is less than ```terminationGracePeriodSeconds``` of ```Server``` pod.
+
+_Trigger_
+
+* ```Server Deployment``` pod template is updated with version 2 of ```Server```.
+
+_Minimal Guarantee_
+
+* All calls are processed by either ```Server v1``` or ```Server v2``` during the rolling update process.
+
+_Success Guarantee_
+
+* After ```Server v2``` pod has started processing calls, no call is processed by ```Server v1``` pod.
+
+_Main Success Scenario_
+
+* 1\. k8s starts up ```Server v2```.
+
+_Steps 2, 9, 12 start at the same time._
+
+_```Server v1``` side_
+
+* 2\. ```Server v1``` receives the ```SIGTERM``` from k8s and starts _Termination Grace Period_.
+* 3\. ```Server v1``` waits for _Termination Grace Period_ to end.
+  * 3a. ```Proxy``` sends a call to ```Server v1```.
+    * 3a1. ```Server v1``` accepts the call for processing.
+    * 3a2. Go to step 3.
+* 4\. ```Server v1``` sends ```Proxy``` **```NAC``` notification**.
+* 5\. ```Server v1``` completes processing all accepted calls.
+  * 5a. ```Proxy``` sends a call to ```Server v1```.\
+    _```Proxy``` must not send any call to ```Server v1``` after ```NAC``` notification._
+    * 5a1. ```Server v1``` logs the error.
+    * 5a2. Go to step 5.
+* 6\. ```Server v1``` sends ```Proxy``` **```RFT``` notification**.
+* 7\. ```Server v1``` terminates.
+
+_```Server v2``` side_
+
+* 8\. ```Server v2``` sends ```Proxy``` **```RFC``` notification**.
+* 9\. ```Server v2``` waits and accepts a call for processing.
+* 10\. Go to step 9.
+
+_```Proxy``` side_
+
+* 11\. ```Proxy``` waits a call from ```Client```.
+  * 11a. ```Proxy``` **receives ```RFC from Server v2```**. The fact is marked as **```RFC-v2-true```**.
+    * 11aa. **```NAC-v1-false```**
+      * 11aa1. Go to step 11.
+    * 11ab. **```NAC-v1-true``` and ```RFT-v1-false```**
+      * 11ab1. Go to step 11.
+    * 11ac. **```NAC-v1-true``` and ```RFT-v1-true```**
+      * 11ac1. ```Proxy``` dequeues calls and sends them to ```Server v2```. 
+      * 11ac2. Go to step 11.
+  * 11b. ```Proxy``` **receives ```NAC from Server v1```**. The fact is marked as **```NAC-v1-true```**.\
+    _Assert(RFT-v1-false)_
+    * 11b1. Go to step 11.
+  * 11c. ```Proxy``` **receives ```RFT from Server v1```**. The fact is marked as **```RFT-v1-true```**.\
+    _Assert(NAC-v1-true)_
+    * 11ca. **```RFC-v2-false```**
+      * 11ca1. Go to step 11.
+    * 11cb. **```RFC-v2-true```**
+      * 11cb1. Go to step 11ac1.
+  * 11d. ```Client``` sends a call and **```NAC-v1-false```**.
+    * 11d1. ```Proxy``` accepts the call and sends it to ```Server v1```.
+    * 11d2. Go to step 11.
+  * 11e. ```Client``` sends a call and **```NAC-v1-true``` and ```RFT-v1-false```**.
+    * 11e1. ```Proxy``` accepts the call and enqueues it.\
+      _The call's processing may be timed out. So, the client must handle it and retry the call._ 
+    * 11e2. Go to step 11.
+  * 11f. ```Client``` sends a call and **```NAC-v1-true``` and ```RFT-v1-true``` and ```RFC-v2-false```**.
+    * 11f1. Go to 11e1.
+  * 11g. ```Client``` sends a call and **```NAC-v1-true``` and ```RFT-v1-true``` and ```RFC-v2-true```**.
+    * 11g1. ```Proxy``` accepts the call and sends it to ```Server v2```.
+    * 11g2. Go to end.
+
+## Observer zero-downtime on rolling update
