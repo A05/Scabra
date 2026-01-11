@@ -170,19 +170,24 @@ _```Server v2``` side_
 
 _```Proxy``` side_
 
+_The fact of ```Proxy``` receiving ```N``` notification from ```Server vX``` will be codified as ```N-vX-true``` and not receiving as ```N-vX-false```._
+
 * 11\. ```Proxy``` waits a call from ```Client```.
-  * 11a. ```Proxy``` **receives ```RFC from Server v2```**. The fact is marked as **```RFC-v2-true```**.
+  * 11a. ```Proxy``` **receives ```RFC from Server v2```**.
     * 11aa. **```NAC-v1-false```**
       * 11aa1. Go to step 11.
     * 11ab. **```NAC-v1-true``` and ```RFT-v1-false```**
       * 11ab1. Go to step 11.
     * 11ac. **```NAC-v1-true``` and ```RFT-v1-true```**
       * 11ac1. ```Proxy``` dequeues calls and sends them to ```Server v2```. 
-      * 11ac2. Go to step 11.
-  * 11b. ```Proxy``` **receives ```NAC from Server v1```**. The fact is marked as **```NAC-v1-true```**.\
+      * 11ac2. ```Proxy``` forgets about ```Server v1```.\
+        _Now **```NAC-v1-true``` and ```RFT-v1-true``` and ```RFC-v2-true```**. All subsequent calls will be sent to ```Server v2```.\
+        On next deployment of ```Server v3```, ```Server v2``` will play role of ```Server v1``` and ```Server v3``` of ```Server v2```._
+      * 11ac3. Go to end.
+  * 11b. ```Proxy``` **receives ```NAC from Server v1```**.\
     _Assert(RFT-v1-false)_
     * 11b1. Go to step 11.
-  * 11c. ```Proxy``` **receives ```RFT from Server v1```**. The fact is marked as **```RFT-v1-true```**.\
+  * 11c. ```Proxy``` **receives ```RFT from Server v1```**.\
     _Assert(NAC-v1-true)_
     * 11ca. **```RFC-v2-false```**
       * 11ca1. Go to step 11.
@@ -197,8 +202,5 @@ _```Proxy``` side_
     * 11e2. Go to step 11.
   * 11f. ```Client``` sends a call and **```NAC-v1-true``` and ```RFT-v1-true``` and ```RFC-v2-false```**.
     * 11f1. Go to 11e1.
-  * 11g. ```Client``` sends a call and **```NAC-v1-true``` and ```RFT-v1-true``` and ```RFC-v2-true```**.
-    * 11g1. ```Proxy``` accepts the call and sends it to ```Server v2```.
-    * 11g2. Go to end.
 
 ## Observer zero-downtime on rolling update
