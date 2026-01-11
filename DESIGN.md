@@ -119,7 +119,7 @@ _```Proxy``` effectively transforms a not zero downtimable application into a ze
 
 _Preconditions_
 
-* ```Client``` sends calls to ```Proxy``` that redirects them to ```Server v1``` that acceptes and processes the calls. ```RPC Server v1``` is the only pod before the rolling update process.
+* ```Client``` sends calls to ```Proxy``` that redirects them to ```Server v1``` that acceptes and processes the calls. ```Server v1``` is the only pod before the rolling update process.
 * ```Server Deployment``` has ```maxUnavailable = 0``` and ```maxSurge = 1```.
 * No ```pre-stop``` hook is configured for ```Server``` pod.
 * _Termination Grace Period_ of ```Server``` application is less than ```terminationGracePeriodSeconds``` of ```Server``` pod.
@@ -140,7 +140,7 @@ _Main Success Scenario_
 
 * 1\. k8s starts up ```Server v2```.
 
-_Steps 2, 9, 12 start at the same time._
+_Steps 2, 8, 11 start at the same time._
 
 _```Server v1``` side_
 
@@ -150,17 +150,21 @@ _```Server v1``` side_
     * 3a1. ```Server v1``` accepts the call for processing.
     * 3a2. Go to step 3.
 * 4\. ```Server v1``` sends ```Proxy``` **```NAC``` notification**.
-* 5\. ```Server v1``` completes processing all accepted calls.
-  * 5a. ```Proxy``` sends a call to ```Server v1```.\
-    _```Proxy``` must not send any call to ```Server v1``` after ```NAC``` notification._
-    * 5a1. ```Server v1``` logs the error.
-    * 5a2. Go to step 5.
+* 5\. ```Server v1``` completes processing all accepted calls.  
 * 6\. ```Server v1``` sends ```Proxy``` **```RFT``` notification**.
 * 7\. ```Server v1``` terminates.
+  * 5-7a. ```Proxy``` sends a call to ```Server v1```.\
+    _```Proxy``` must not send any call to ```Server v1``` after ```NAC``` notification._
+    * 5-7a1. ```Server v1``` logs the error.
+    * 5-7a2. Go to step 7.
 
 _```Server v2``` side_
 
 * 8\. ```Server v2``` sends ```Proxy``` **```RFC``` notification**.
+  * 8a. ```Proxy``` sends a call to ```Server v2```.\
+    _Before receiving ```RFC``` notification ```Proxy``` must not send any call to ```Server v2```._
+    * 8a1. ```Server v2``` logs the error.
+    * 8a2. ```Server v2``` terminates.
 * 9\. ```Server v2``` waits and accepts a call for processing.
 * 10\. Go to step 9.
 
